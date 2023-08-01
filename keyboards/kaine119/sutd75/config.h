@@ -6,8 +6,8 @@
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    kaine119
-#define PRODUCT         SUTD75
+#define MANUFACTURER    "kaine119"
+#define PRODUCT         "SUTD75"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -19,8 +19,8 @@
 #define DIODE_DIRECTION ROW2COL
 
 /* Rotary encoder pins */
-#define ENCODERS_PAD_A { A7 }
-#define ENCODERS_PAD_B { A6 }
+#define ENCODERS_PAD_A { A6 }
+#define ENCODERS_PAD_B { A7 }
 #define ENCODER_RESOLUTION 4 /* pulses the encoder outputs between each dedent */
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
@@ -38,7 +38,7 @@
  * RGB LED support
  */
 #define RGBLED_NUM 8
-#define RGB_DI_PIN D2
+#define WS2812_DI_PIN D2
 
 #define RGBLIGHT_EFFECT_BREATHING
 #define RGBLIGHT_EFFECT_ALTERNATING
@@ -56,11 +56,11 @@
 #define RGBLIGHT_DEFAULT_SPD  1
 
 
-#define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
-#define WS2812_PWM_CHANNEL 2  // default: 2
-#define WS2812_PWM_PAL_MODE 2  // Pin "alternate function", see the respective datasheet for the appropriate values for your MCU. default: 2
-//#define WS2812_PWM_COMPLEMENTARY_OUTPUT // Define for a complementary timer output (TIMx_CHyN); omit for a normal timer output (TIMx_CHy).
-#define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#define WS2812_DMA_CHANNEL 2  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
-#define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM2_UP // DMAMUX configuration for TIMx_UP -- only required if your MCU has a DMAMUX peripheral, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
+// #define WS2812_PWM_CHANNEL 2  // default: 2
+// #define WS2812_PWM_PAL_MODE 2  // Pin "alternate function", see the respective datasheet for the appropriate values for your MCU. default: 2
+// //#define WS2812_PWM_COMPLEMENTARY_OUTPUT // Define for a complementary timer output (TIMx_CHyN); omit for a normal timer output (TIMx_CHy).
+// #define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_DMA_CHANNEL 2  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM2_UP // DMAMUX configuration for TIMx_UP -- only required if your MCU has a DMAMUX peripheral, see the respective reference manual for the appropriate values for your MCU.
 
