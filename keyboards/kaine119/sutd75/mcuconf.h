@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include_next "mcuconf.h"
+#include_next <mcuconf.h>
 
 // The SysTick timer from the normal quantum/stm32 uses TIM2 -- the WS2812 pin used
 // on the Planck requires the use of TIM2 to run PWM -- rework which timers are
@@ -28,6 +28,9 @@
 #define STM32_ST_USE_TIMER 3
 
 // enable i2c 
-#undef STM32_I2C_USE_I2C1
-#define STM32_I2C_USE_I2C1                  TRUE
+#undef STM32_I2C_USE_I2C2
+#define STM32_I2C_USE_I2C2 TRUE
 
+#define I2C_DRIVER I2CD2
+
+#define I2C2_CLOCK_SPEED 100000

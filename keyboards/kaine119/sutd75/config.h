@@ -23,10 +23,8 @@
 #define ENCODERS_PAD_B { A7 }
 #define ENCODER_RESOLUTION 4 /* pulses the encoder outputs between each dedent */
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-// #define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-// #define LOCKING_RESYNC_ENABLE
+#define I2C1_SCL_PIN B10
+#define I2C1_SDA_PIN B11
 
 /* Use 1000hz polling */
 #define USB_POLLING_INTERVAL_MS 1
