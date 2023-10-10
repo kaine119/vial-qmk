@@ -3,6 +3,10 @@
 #include "sutd75.h"
 
 
+#define SPLASH_TIMEOUT 3000
+static uint16_t splash_timer;
+static bool splash_screen_displayed = true;
+
 #ifdef RGB_MATRIX_ENABLE
 // clang-format off
 led_config_t g_led_config = {
@@ -35,6 +39,7 @@ led_config_t g_led_config = {
 #ifdef OLED_ENABLE
 
 oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
+    splash_timer = timer_read();
     return OLED_ROTATION_270;
 }
 
@@ -75,7 +80,16 @@ static const char PROGMEM sutd_logo[] = {
 };
 
 bool oled_task_kb(void) {
-    oled_write_raw_P(sutd_logo, 512);
+
+    if (timer_elapsed(splash_timer) <= SPLASH_TIMEOUT) {
+        oled_write_raw_P(sutd_logo, 512);
+    }
+    else if (splash_screen_displayed) {
+        oled_clear();
+        splash_screen_displayed = false;
+    } else {
+        oled_write_ln("Wel-\ncome\nto\nSUTD\n75", false);
+    }
     return true;
 }
 
