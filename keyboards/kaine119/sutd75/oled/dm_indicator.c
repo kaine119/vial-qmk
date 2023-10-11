@@ -62,7 +62,7 @@ void render_dm_screen(void) {
 
         oled_set_cursor(0, 0);
         oled_write_ln("DM1", false);
-        sprintf(macro_1_buffer, "%4u", macro_1_count);
+        sprintf(macro_1_buffer, "%-5u", macro_1_count);
         oled_set_cursor(0, 2);
         oled_write_ln(macro_1_buffer, false);
         oled_set_cursor(0, 3);
@@ -78,7 +78,7 @@ void render_dm_screen(void) {
 
         oled_set_cursor(0, 9);
         oled_write_ln("DM2", false);
-        sprintf(macro_2_buffer, "%4u", macro_2_count);
+        sprintf(macro_2_buffer, "%-5u", macro_2_count);
         oled_set_cursor(0, 11);
         oled_write_ln(macro_2_buffer, false);
         oled_set_cursor(0, 12);
